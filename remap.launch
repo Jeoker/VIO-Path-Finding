@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="rosbag" type="play" name="rosbag" required="true" args="/home/jeoker/Documents/ML-Group/all-data.bag">
+    <remap from="/tango/camera/fisheye_1/image_rect" to="/test_image"/>
+  </node>
+</launch>

@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="rostopic" type="rostopic" name="echo_camera_info" required="true" args="echo /tango/camera/fisheye_1/camera_info" />
+  <node pkg="rosbag" type="record" name="record_bag" required="true" args="-o /home/jeoker/Documents/EECE-5698/GROUP /tango/camera/fisheye_1/image_rect /imu/imu" />
+  <node pkg="image_view" type="image_view" name="image_view" required="true" output="screen">
+  	<remap from="image" to="/tango/camera/fisheye_1/image_rect" />
+  </node>
+</launch>
